@@ -6,7 +6,6 @@ using namespace std;
 typedef struct node list;
 
 struct node{
-
     int value;
     struct node *next;
 };
@@ -74,7 +73,25 @@ int listSum (){
         ptr = ptr->next;
     }
     return sum;
+}
+void deletItem(int item){
+    if(head->value == item){
+        head = head->next;
+        return;
+    }
+
+    list *ptr = head;
+    while (ptr->next->value != item)
+    {
+        ptr = ptr->next;
+    }
+    if(ptr->next->next == NULL){
+        ptr->next = NULL;
+    }else{
+        ptr->next = ptr->next->next;
+    }
     
+
 }
 
 int main()
@@ -83,9 +100,12 @@ int main()
     addNodeEnd(444);
     addFirst(13);
     addFirst(15);
+    deletItem(12);
     addAfter(13 , 33);
     printList();
     cout<< listSum() <<endl;
+    cout<<head->value;
+
 
     return 0;
 }
