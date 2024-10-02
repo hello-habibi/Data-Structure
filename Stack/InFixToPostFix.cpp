@@ -145,7 +145,7 @@ int evaluate(string &postFix)
 
 int main()
 {
-    string infix = "1*(2+3+3)", postfix;
+    string infix = "1*(2+3+3)^2", postfix;
     convert(infix, postfix);
     cout << "Infix expression is : " << infix << endl;
     cout << "PostFixExpression is : " << postfix << endl;

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int MAX_SIZE = 10;
-int stack[10];
+int stack[MAX_SIZE];
 int topPointer = -1;
 
 int isFull(){
